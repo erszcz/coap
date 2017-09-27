@@ -1,2 +1,2 @@
 %{"apex": {:hex, :apex, "1.0.0", "abf230314d35ca4c48a902f693247f190ad42fc14862b9c4f7dbb7077b21c20a", [:mix], []},
-  "gen_coap": {:git, "https://github.com/erszcz/gen_coap.git", "9404f096258e49b3a54bc3988af616f1f2ac2303", []}}
+  "gen_coap": {:git, "https://github.com/erszcz/gen_coap.git", "464fa70ca140fd0f5adc3939031606ab4c194429", [ref: "464fa70"]}}

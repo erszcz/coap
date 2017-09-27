@@ -13,23 +13,23 @@ defmodule Coap.Resource do
         [{:absolute, prefix, args}]
       end
 
-      def coap_get(_ch_id, _prefix, _name, _query) do
+      def coap_get(_ch_id, _prefix, _name, _query, _request) do
         coap_content()
       end
 
-      def coap_post(_ch_id, _prefix, _name, _content) do
+      def coap_post(_ch_id, _prefix, _name, _content, _request) do
         {:ok, :content, coap_content()}
       end
 
-      def coap_put(_ch_id, _prefix, _name, _content) do
+      def coap_put(_ch_id, _prefix, _name, _content, _request) do
         :ok
       end
 
-      def coap_delete(_ch_id, _prefix, _name) do
+      def coap_delete(_ch_id, _prefix, _name, _request) do
         :ok
       end
 
-      def coap_observe(ch_id, prefix, name, _ack) do
+      def coap_observe(ch_id, prefix, name, _ack, _request) do
         {:ok, {:state, prefix, name}}
       end
 
@@ -45,8 +45,8 @@ defmodule Coap.Resource do
         {:ok, state}
       end
 
-      defoverridable [start: 2, coap_discover: 2, coap_get: 4, coap_post: 4, coap_put: 4,
-        coap_delete: 3, coap_observe: 4, coap_unobserve: 1, handle_info: 2, coap_ack: 2]
+      defoverridable [start: 2, coap_discover: 2, coap_get: 5, coap_post: 5, coap_put: 5,
+        coap_delete: 4, coap_observe: 5, coap_unobserve: 1, handle_info: 2, coap_ack: 2]
     end
   end
 end
